@@ -1,0 +1,14 @@
+{
+  "name": "mytodo",
+  "version": "0.1.0",
+  "description": "my first todo",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "jquery": "^3.3.1"
+  }
+}
