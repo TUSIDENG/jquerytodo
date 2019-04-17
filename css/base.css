@@ -4,6 +4,10 @@
     outline: 0;
 }
 
+li {
+    list-style-type: none;
+}
+
 body {
     background: #283b71;
     color: #fff;
@@ -21,6 +25,10 @@ h1 {
 
 .task-list {
     margin: 10px 0;
+}
+
+.fr {
+    float: right;
 }
 
 button,
@@ -127,4 +135,17 @@ button {
     left: 0;
     right: 0;
     background: rgba(30, 30, 30, 0.4);
+}
+
+.task-title {
+    margin-left: 10px;
+}
+
+.action {
+    color: #888;
+    font-size: 90%;
+}
+
+.action:hover {
+    color: #ccc;
 }
