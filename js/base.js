@@ -1,7 +1,6 @@
 ;(function () {
     'use strict';
     var $form_add_task = $('.add-task'),
-    $task_delete_trigger,
     $task_detail = $('.task-detail'),
     $task_detail_mask = $('.task-detail-mask'),
     $task_list = $('.task-list'),
@@ -18,22 +17,22 @@
          if (!new_task.title) return;
         
          if (add_task(new_task)) {
-            render_task_list();
+            var $task_item = render_task_item(new_task);
+            $task_list.append($task_item);
              $input.val(null);
          }
      });
 
      /**
       * 监听任务删除
+      * 使用了事件委托
+      * 使用index方法获取匹配的元素中指定元素的索引
       */
-     function listen_task_delete() {
-        $task_delete_trigger.on('click', function() {
-            var $this = $(this);
-            var index = $this.parent().parent().data('index');
-            var tmp = confirm('确认删除?');
-            (tmp ? delete_task(index) : null) ? render_task_list() : null;
-        });
-     }
+     $task_list.on('click', '.action.delete', function(event) {
+         var index = $('.task-item').index($(this).parent().parent());
+         var tmp = confirm('确认删除吗?');
+         (tmp ? delete_task(index) : null) ? render_task_list() : null;
+     })
 
      /**
       * 监听点击任务详情
@@ -96,8 +95,6 @@
             var $task_item = render_task_item(task, index);
             $task_list.append($task_item);
         });
-        $task_delete_trigger = $('.action.delete');
-        listen_task_delete();
     }
 
     /**
