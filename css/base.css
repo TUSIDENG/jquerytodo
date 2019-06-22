@@ -63,6 +63,7 @@ input[type=date]:hover {
 input,
 .task-item,
 button,
+.task-detail,
 .task-detail-mask {
     cursor: pointer;
     border-radius: 3px;
@@ -104,6 +105,15 @@ button {
     background: #eee;
 }
 
+.action {
+    color: #888;
+    font-size: 90%;
+}
+
+.action:hover {
+    color: #ccc;
+}
+
 .task-detail, .task-detail-mask {
     position: absolute;
 }
@@ -121,6 +131,13 @@ button {
     padding: 10px;
     bottom: 0;
     right: 0;
+    border-radius: 3px 0 0 3px;
+    box-shadow: 2px 3px rgba(0, 0, 0, 0.4);
+}
+
+.task-detail .input-item {
+    margin-left: 10px;
+    margin-bottom: 10px;
 }
 
 .task-detail .title {
@@ -130,6 +147,7 @@ button {
 }
 
 .task-detail-mask {
+    position: fixed;
     top: 0;
     bottom: 0;
     left: 0;
@@ -137,15 +155,7 @@ button {
     background: rgba(30, 30, 30, 0.4);
 }
 
-.task-title {
-    margin-left: 10px;
-}
-
-.action {
-    color: #888;
-    font-size: 90%;
-}
-
-.action:hover {
-    color: #ccc;
+.input-item button {
+    background: #0763f1;
+    width: 100%;
 }
