@@ -177,7 +177,7 @@
         '<input type="date" value="' + (item.remind || '') + '" name="remind" id="">' +
     '</div>' +
     '<div class="input-item">' +
-    '<button type="submit">submit</button>' +
+    '<button type="submit">更新</button>' +
     '</div>';
     return tpl;
     }
